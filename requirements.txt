@@ -1,0 +1,11 @@
+fastapi>=0.115.0
+uvicorn[standard]>=0.34.0
+sqlalchemy>=2.0.25
+pymysql>=1.1.0
+cryptography>=42.0.0
+pydantic>=2.10.0
+pydantic-settings>=2.7.0
+python-jose[cryptography]>=3.3.0
+passlib[bcrypt]>=1.7.4
+python-dotenv>=1.0.0
+resend>=0.1.0
