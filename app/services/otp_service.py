@@ -61,3 +61,10 @@ def reset_password(db: Session, email: str, new_password: str) -> bool:
     user.password_hash = hash_password(new_password)
     db.commit()
     return True
+
+
+def create_login_otp(db: Session, email: str):
+    user = db.query(User).filter(User.email == email).first()
+    if not user:
+        return None
+    return create_otp(db, user.id)

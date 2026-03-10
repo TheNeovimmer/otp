@@ -7,8 +7,6 @@ const API_URL = 'http://localhost:8000'
 
 function Register() {
   const [email, setEmail] = useState('')
-  const [password, setPassword] = useState('')
-  const [confirmPassword, setConfirmPassword] = useState('')
   const [error, setError] = useState('')
   const [success, setSuccess] = useState('')
   const navigate = useNavigate()
@@ -17,14 +15,9 @@ function Register() {
     e.preventDefault()
     setError('')
     setSuccess('')
-    
-    if (password !== confirmPassword) {
-      setError('Passwords do not match')
-      return
-    }
 
     try {
-      await axios.post(`${API_URL}/auth/register`, { email, password })
+      await axios.post(`${API_URL}/auth/register`, { email })
       setSuccess('Registration successful! Redirecting to login...')
       setTimeout(() => navigate('/login'), 2000)
     } catch (err) {
@@ -43,20 +36,6 @@ function Register() {
           placeholder="Email"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
-          required
-        />
-        <input
-          type="password"
-          placeholder="Password"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-          required
-        />
-        <input
-          type="password"
-          placeholder="Confirm Password"
-          value={confirmPassword}
-          onChange={(e) => setConfirmPassword(e.target.value)}
           required
         />
         <button type="submit">Register</button>

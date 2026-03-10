@@ -123,3 +123,13 @@ body {
   background: #c82333;
   box-shadow: 0 5px 20px rgba(220, 53, 69, 0.4);
 }
+
+.secondary-btn {
+  margin-top: 10px;
+  background: #6c757d !important;
+}
+
+.secondary-btn:hover {
+  background: #5a6268 !important;
+  box-shadow: 0 5px 20px rgba(108, 117, 125, 0.4) !important;
+}

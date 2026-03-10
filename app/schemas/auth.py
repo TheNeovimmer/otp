@@ -4,12 +4,11 @@ from typing import Optional
 
 class LoginRequest(BaseModel):
     email: EmailStr
-    password: str
+    otp_code: str
 
 
 class RegisterRequest(BaseModel):
     email: EmailStr
-    password: str
 
 
 class TokenResponse(BaseModel):
@@ -20,3 +19,7 @@ class TokenResponse(BaseModel):
 
 class RefreshTokenRequest(BaseModel):
     refresh_token: str
+
+
+class LoginOTPRequest(BaseModel):
+    email: EmailStr
